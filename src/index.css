@@ -15,22 +15,25 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --animate-marquee: marquee 40s linear infinite;
-  --animate-marquee-slow: marquee 60s linear infinite;
+  --animate-marquee-slow: marquee 65s linear infinite;
   --animate-marquee-fast: marquee 25s linear infinite;
   --animate-pulse-slow: pulse-slow 8s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
+  
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
 
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
   @keyframes pulse-slow {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50% { opacity: 0.25; transform: scale(1.05); }
+    0%, 100% { opacity: 0.12; transform: scale(1); }
+    50% { opacity: 0.22; transform: scale(1.05); }
   }
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
   }
 }
 
@@ -46,44 +49,60 @@
 }
 
 @layer utilities {
+  .transition-fluid {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   .glassmorphism {
-    background: rgba(10, 17, 32, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(10, 17, 32, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
   }
   
   .glassmorphism-premium {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(10, 17, 32, 0.8) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(197, 160, 89, 0.1);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(10, 17, 32, 0.75) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(197, 160, 89, 0.08);
   }
 
   .text-glow {
-    text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+    text-shadow: 0 0 30px rgba(197, 160, 89, 0.25);
   }
 
   .shadow-neon-primary {
-    box-shadow: 0 0 30px rgba(197, 160, 89, 0.15);
+    box-shadow: 0 0 40px rgba(197, 160, 89, 0.12);
   }
 
   .shadow-neon-glow {
-    box-shadow: 0 0 40px rgba(197, 160, 89, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 50px rgba(197, 160, 89, 0.18), inset 0 0 20px rgba(255, 255, 255, 0.03);
+  }
+
+  /* Fade out scrolling cards near the screen edges like a premium marquee */
+  .mask-gradient {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  /* Designer tech grid lines */
+  .tech-grid-dots {
+    background-image: radial-gradient(rgba(197, 160, 89, 0.07) 1px, transparent 0);
+    background-size: 24px 24px;
   }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #05080F;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(197, 160, 89, 0.3);
-    border-radius: 4px;
+    background: rgba(197, 160, 89, 0.2);
+    border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(197, 160, 89, 0.6);
+    background: rgba(197, 160, 89, 0.5);
   }
 }

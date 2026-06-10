@@ -29,107 +29,122 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="pt-36 pb-24 px-6 relative overflow-hidden">
-      {/* Light spots for depth */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
-      <div className="absolute top-1/3 right-1/4 translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
+    <section id="inicio" className="pt-40 pb-28 px-6 relative overflow-hidden bg-[#05080F]">
+      {/* Designer Background Details */}
+      <div className="absolute inset-0 tech-grid-dots opacity-40 pointer-events-none"></div>
+      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-white/[0.02] pointer-events-none hidden lg:block"></div>
+      <div className="absolute top-0 left-[75%] w-[1px] h-full bg-white/[0.02] pointer-events-none hidden lg:block"></div>
+      
+      {/* Moving Organic Light Blobs */}
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+      {/* Decorative Technical Labels */}
+      <div className="hidden xl:block absolute left-10 bottom-10 text-[9px] font-mono text-slate-600 tracking-[0.3em] uppercase pointer-events-none">
+        VISIONÁRIA CORE V2.8 // BR-SP
+      </div>
+      <div className="hidden xl:block absolute right-10 bottom-10 text-[9px] font-mono text-slate-600 tracking-[0.3em] uppercase pointer-events-none">
+        LAT: 23.5505° S, LONG: 46.6333° W
+      </div>
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center relative z-10">
         {/* Left Column: Copywriting & Emotional Hook */}
         <div className="lg:col-span-7 flex flex-col justify-center text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full w-fit mb-6">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-              <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-primary-light">
-                Planejamento Tributário Inteligente
+            {/* Fine line details for designer vibe */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-6 h-[1px] bg-primary"></span>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary-light font-mono">
+                [01 // ESTRUTURA FISCAL INTELIGENTE]
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold font-display tracking-tight text-white mb-6 leading-[1.1]">
-              Por trás de cada CNPJ, existe um <span className="text-primary font-serif italic font-normal text-glow">sonho</span> que merece ser protegido.
+            <h1 className="text-4xl md:text-[3.75rem] font-bold font-display tracking-tight text-white mb-8 leading-[1.05]">
+              Por trás de cada CNPJ, existe um <span className="font-serif italic font-normal text-primary text-glow font-light">sonho</span> que merece ser protegido.
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl font-light">
-              Não deixe o fruto do seu trabalho duro ser consumido por impostos desnecessários ou burocracia sem fim. Nós cuidamos dos seus números para você ter a liberdade de focar no seu amanhã.
+            <p className="text-md md:text-lg text-slate-400 mb-10 leading-relaxed max-w-xl font-light">
+              Não deixe o fruto do seu trabalho duro ser consumido por impostos desnecessários. Nós cuidamos da burocracia para você ter a liberdade de expandir seus horizontes.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-5 mb-12">
               <a
                 href="#contato"
-                className="px-8 py-4 bg-gradient-to-r from-primary to-[#D4AF37] text-[#05080F] font-extrabold rounded-xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 text-center uppercase tracking-widest text-xs flex items-center justify-center gap-2"
+                className="px-8 py-4.5 bg-gradient-to-r from-primary to-[#D4AF37] hover:from-[#D4AF37] hover:to-primary text-slate-950 font-extrabold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-103 active:scale-97 shadow-xl shadow-primary/15 text-center uppercase tracking-[0.2em] text-[10px] flex items-center justify-center gap-2 border border-primary/20"
               >
-                Abrir Minha Empresa <ArrowRight size={14} />
+                Abrir Minha Empresa <ArrowRight size={12} />
               </a>
               <a
                 href="#sobre"
-                className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 active:scale-95 transition-colors text-center text-sm"
+                className="px-8 py-4.5 bg-white/5 border border-white/5 hover:border-white/20 text-white font-bold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-center text-xs uppercase tracking-widest flex items-center justify-center"
               >
                 Conhecer a Visionária
               </a>
             </div>
 
-            {/* Micro badges for credibility */}
-            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-lg">
-              <div>
-                <p className="text-2xl font-bold font-display text-white">R$ 14M+</p>
-                <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Impostos Economizados</p>
+            {/* Asymmetrical Metric Indicators */}
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/5 max-w-lg">
+              <div className="border-l border-white/10 pl-4">
+                <p className="text-2xl font-bold font-display text-white tracking-tight">R$ 14M+</p>
+                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-1">// Economia Gerada</p>
               </div>
-              <div>
-                <p className="text-2xl font-bold font-display text-white">99.8%</p>
-                <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Conformidade Fiscal</p>
+              <div className="border-l border-white/10 pl-4">
+                <p className="text-2xl font-bold font-display text-white tracking-tight">99.8%</p>
+                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-1">// Conformidade Fiscal</p>
               </div>
-              <div>
-                <p className="text-2xl font-bold font-display text-white">100%</p>
-                <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Digital e Humanizado</p>
+              <div className="border-l border-white/10 pl-4">
+                <p className="text-2xl font-bold font-display text-white tracking-tight">100%</p>
+                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-1">// Contabilidade Digital</p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Right Column: Expert Model (Interactive Tax Savings Simulator) */}
+        {/* Right Column: Stripe-like Custom Simulator Widget */}
         <div className="lg:col-span-5">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="glassmorphism-premium p-8 rounded-3xl shadow-neon-glow relative border border-white/10"
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="glassmorphism-premium p-8 lg:p-10 rounded-[2rem] shadow-neon-glow relative border border-white/10"
           >
-            <div className="absolute top-0 right-8 -translate-y-1/2 px-3 py-1 bg-primary text-slate-950 font-black text-[9px] uppercase tracking-widest rounded-full shadow-lg">
-              Calculadora de Especialista
+            {/* Tiny technical aesthetic badge */}
+            <div className="absolute top-0 right-10 -translate-y-1/2 px-4 py-1.5 bg-[#0A1120] text-primary border border-primary/20 font-mono text-[9px] uppercase tracking-widest rounded-full shadow-lg">
+              SIMULATOR_V.2.8
             </div>
 
-            <div className="mb-6">
-              <h3 className="text-xl font-bold text-white font-display flex items-center gap-2">
-                <TrendingUp className="text-primary" size={20} />
-                Simule Sua Economia
+            <div className="mb-8 text-left">
+              <h3 className="text-lg font-bold text-white font-display flex items-center gap-2">
+                <TrendingUp className="text-primary" size={18} />
+                Inteligência de Lucro
               </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                Descubra o impacto de um planejamento tributário estratégico feito por profissionais.
+              <p className="text-xs text-slate-400 mt-1 font-light">
+                Descubra quanta receita você está deixando na mesa com as alíquotas normais.
               </p>
             </div>
 
-            {/* Segment Selector */}
-            <div className="mb-6">
-              <label className="text-xs text-slate-300 font-bold uppercase tracking-wider block mb-2">
-                Segmento de Atuação
-              </label>
-              <div className="grid grid-cols-3 gap-2">
+            {/* Segment Selector (Stripe-like tabs) */}
+            <div className="mb-8 text-left">
+              <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest block mb-3">
+                [01] SELECIONE SEU SEGMENTO
+              </span>
+              <div className="grid grid-cols-3 gap-2 bg-[#05080F]/65 p-1 rounded-xl border border-white/5">
                 {[
                   { id: 'tecnologia', label: 'Tecnologia / Dev' },
-                  { id: 'servicos', label: 'Serviços Gerais' },
-                  { id: 'comercio', label: 'Comércio / Varejo' },
+                  { id: 'servicos', label: 'Serviços' },
+                  { id: 'comercio', label: 'Comércio' },
                 ].map((seg) => (
                   <button
                     key={seg.id}
                     onClick={() => setSegment(seg.id)}
-                    className={`py-2 px-1 text-center rounded-lg text-xs font-bold transition-all ${
+                    className={`py-2 px-1 text-center rounded-lg text-xs font-bold transition-fluid ${
                       segment === seg.id
-                        ? 'bg-primary text-slate-950 shadow-md'
-                        : 'bg-white/5 text-slate-400 hover:bg-white/10'
+                        ? 'bg-primary text-slate-950 shadow-md font-extrabold'
+                        : 'text-slate-400 hover:text-white hover:bg-white/[0.02]'
                     }`}
                   >
                     {seg.label}
@@ -139,12 +154,12 @@ export default function Hero() {
             </div>
 
             {/* Revenue Input Slider */}
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-2">
-                <label className="text-xs text-slate-300 font-bold uppercase tracking-wider">
-                  Faturamento Mensal
-                </label>
-                <span className="text-lg font-black text-primary-light font-mono">
+            <div className="mb-8 text-left">
+              <div className="flex justify-between items-end mb-3">
+                <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">
+                  [02] FATURAMENTO MENSAL
+                </span>
+                <span className="text-xl font-bold text-white font-mono leading-none tracking-tight">
                   {formatCurrency(revenue)}
                 </span>
               </div>
@@ -155,35 +170,35 @@ export default function Hero() {
                 step="5000"
                 value={revenue}
                 onChange={(e) => setRevenue(Number(e.target.value))}
-                className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary"
+                className="w-full h-[3px] bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none"
               />
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+              <div className="flex justify-between text-[9px] text-slate-500 mt-2 font-mono">
                 <span>R$ 10k</span>
                 <span>R$ 250k</span>
                 <span>R$ 500k+</span>
               </div>
             </div>
 
-            {/* Visual Savings Display */}
-            <div className="bg-[#05080F]/60 border border-white/5 rounded-2xl p-5 mb-6">
-              <div className="grid grid-cols-2 gap-4 divide-x divide-white/5">
-                <div className="flex flex-col items-center">
-                  <span className="text-[10px] uppercase text-slate-500 tracking-wider">Alíquota Média Comum</span>
-                  <span className="text-xl font-bold text-red-400 font-mono mt-1 flex items-center gap-1">
-                    {(normal * 100).toFixed(1)}% <Percent size={14} />
+            {/* Designer comparison display */}
+            <div className="bg-[#05080F]/45 border border-white/5 rounded-2xl p-6 mb-8 text-left">
+              <div className="grid grid-cols-2 gap-6 divide-x divide-white/5">
+                <div className="flex flex-col">
+                  <span className="text-[9px] uppercase text-slate-500 tracking-wider font-mono">Custo Comum</span>
+                  <span className="text-lg font-bold text-red-400/90 font-mono mt-1 flex items-center gap-0.5">
+                    {(normal * 100).toFixed(1)}% <Percent size={12} />
                   </span>
                 </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-[10px] uppercase text-slate-500 tracking-wider">Alíquota Visionária</span>
-                  <span className="text-xl font-bold text-green-400 font-mono mt-1 flex items-center gap-1">
-                    {(optimized * 100).toFixed(1)}% <Percent size={14} />
+                <div className="flex flex-col pl-6">
+                  <span className="text-[9px] uppercase text-slate-500 tracking-wider font-mono">Custo Visionária</span>
+                  <span className="text-lg font-bold text-green-400/90 font-mono mt-1 flex items-center gap-0.5">
+                    {(optimized * 100).toFixed(1)}% <Percent size={12} />
                   </span>
                 </div>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-white/5 flex flex-col items-center justify-center">
-                <span className="text-xs text-slate-400 uppercase tracking-widest">Economia Estimada por Ano</span>
-                <span className="text-3xl font-black text-primary font-display mt-2 text-glow">
+              <div className="mt-6 pt-5 border-t border-white/5 flex flex-col items-start justify-center">
+                <span className="text-[9px] text-slate-500 uppercase tracking-widest font-mono">Economia Estimada Anual</span>
+                <span className="text-3xl font-extrabold text-primary font-display mt-2 text-glow tracking-tight leading-none">
                   {formatCurrency(yearlySavings)}
                 </span>
               </div>
@@ -191,14 +206,10 @@ export default function Hero() {
 
             <a
               href="#contato"
-              className="w-full py-4 bg-white/5 hover:bg-primary hover:text-slate-950 border border-white/10 text-white font-extrabold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-widest hover:shadow-neon-primary"
+              className="w-full py-4 bg-white/[0.03] hover:bg-primary hover:text-slate-950 border border-white/5 hover:border-primary text-white font-extrabold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] hover:shadow-neon-primary"
             >
-              <DollarSign size={14} /> Solicitar Estudo Tributário Grátis
+              <DollarSign size={12} /> Garantir Essa Economia
             </a>
-
-            <p className="text-[10px] text-slate-500 text-center mt-3 leading-relaxed">
-              *Valores simulados de economia baseados em médias de elisão fiscal em conformidade com a legislação tributária brasileira.
-            </p>
           </motion.div>
         </div>
       </div>

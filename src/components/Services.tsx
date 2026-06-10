@@ -6,45 +6,54 @@ const services = [
   {
     icon: Building2,
     title: 'Abertura de Empresas',
-    desc: 'Estruturação jurídica e fiscal sob medida para sua nova jornada empresarial começar blindada.',
+    desc: 'Estruturação jurídica e fiscal sob medida para sua nova jornada empresarial começar blindada e forte.',
     img: '/company_creation.png',
-    link: '#contato',
+    num: '01',
+    category: 'CONSTITUIÇÃO',
   },
   {
     icon: BarChart3,
     title: 'Gestão Fiscal & Contábil',
-    desc: 'Escrituração de alta precisão que garante conformidade legal e evita multas fiscais.',
+    desc: 'Escrituração de alta precisão que garante conformidade integral com a Receita e evita riscos.',
     img: '/tax_reduction.png',
-    link: '#contato',
+    num: '02',
+    category: 'OPERACIONAL',
   },
   {
     icon: Briefcase,
     title: 'Consultoria Tributária',
-    desc: 'Estudo ativo da legislação para enquadramento ideal e redução real da carga tributária.',
+    desc: 'Estudo ativo e elisão fiscal estratégica para enquadramento ideal e economia real no caixa.',
     img: '/expert_portrait.png',
-    link: '#contato',
+    num: '03',
+    category: 'ESTRATÉGIA',
   },
   {
     icon: Users,
     title: 'Departamento Pessoal',
-    desc: 'Gestão segura da folha de pagamento, férias e obrigações trabalhistas dos seus colaboradores.',
+    desc: 'Gestão segura da folha de pagamento, férias e obrigações eSocial dos seus colaboradores.',
     img: '/bpo_finance.png',
-    link: '#contato',
+    num: '04',
+    category: 'DEPARTAMENTO',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <span className="text-xs uppercase tracking-[0.25em] font-extrabold text-primary block mb-3">
-          Nossas Soluções
-        </span>
-        <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-4">
-          Serviços Estratégicos Inteligentes
+    <section id="servicos" className="py-28 px-6 max-w-7xl mx-auto relative z-10">
+      <div className="absolute top-10 right-10 text-[9px] font-mono text-slate-700 tracking-[0.2em] uppercase pointer-events-none hidden xl:block">
+        // CORE SERVICE GRID
+      </div>
+
+      <div className="text-left mb-16">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-6 h-[1px] bg-primary"></span>
+          <span className="text-[10px] uppercase tracking-[0.25em] font-extrabold text-primary font-mono">// PORTFÓLIO DE SOLUÇÕES</span>
+        </div>
+        <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-4 tracking-tight">
+          Serviços Estratégicos <span className="font-serif italic font-normal text-primary text-glow">Sob Medida</span>
         </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto font-light">
-          Apoio completo em todas as etapas financeiras e tributárias para sua empresa acelerar com segurança.
+        <p className="text-slate-400 max-w-2xl font-light">
+          Apoio completo para todas as frentes tributárias e contábeis do seu negócio, sem planilhas confusas.
         </p>
       </div>
 
@@ -53,46 +62,57 @@ export default function Services() {
         {services.map((s, i) => {
           const IconComponent = s.icon;
           return (
-            <motion.div
+            <motion.a
               key={i}
+              href="#contato"
               whileHover={{ y: -8 }}
-              className="relative h-[380px] rounded-2xl overflow-hidden border border-white/5 group transition-all duration-500 shadow-lg hover:border-primary/40 bg-[#0A1120]/40 flex flex-col justify-between p-8"
+              className="relative h-[400px] rounded-3xl overflow-hidden border border-white/5 group transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-xl bg-[#0A1120]/40 flex flex-col justify-between p-8"
             >
-              {/* Card Photo Backdrop with zoom on hover */}
+              {/* Card Photo Backdrop with custom blend modes */}
               <div className="absolute inset-0 z-0">
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="w-full h-full object-cover opacity-10 group-hover:opacity-25 group-hover:scale-110 transition-all duration-700 pointer-events-none"
+                  className="w-full h-full object-cover opacity-5 group-hover:opacity-20 group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none filter grayscale group-hover:grayscale-0"
                 />
                 {/* Vignette overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] via-[#05080F]/90 to-transparent"></div>
               </div>
 
+              {/* Card Header details */}
+              <div className="relative z-10 flex justify-between items-center w-full">
+                <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest leading-none">
+                  // {s.category}
+                </span>
+                <span className="text-[9px] font-mono text-primary/70 font-extrabold leading-none">
+                  {s.num}
+                </span>
+              </div>
+
               {/* Card Content */}
-              <div className="relative z-10 flex flex-col items-start w-full">
+              <div className="relative z-10 flex flex-col items-start w-full mt-auto mb-6">
                 {/* Icon box with glowing hover effect */}
-                <div className="w-12 h-12 flex items-center justify-center bg-white/5 rounded-xl mb-6 border border-white/10 group-hover:bg-primary group-hover:text-slate-950 group-hover:shadow-neon-primary transition-all duration-300">
-                  <IconComponent className="text-primary group-hover:text-slate-950 transition-colors" size={22} />
+                <div className="w-11 h-11 flex items-center justify-center bg-white/5 rounded-xl mb-6 border border-white/10 group-hover:bg-primary group-hover:text-slate-950 group-hover:shadow-neon-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                  <IconComponent className="text-primary group-hover:text-slate-950 transition-colors duration-300" size={20} />
                 </div>
 
-                <h3 className="text-lg font-bold font-display text-white mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold font-display text-white mb-3 group-hover:text-primary transition-colors duration-300">
                   {s.title}
                 </h3>
                 
-                <p className="text-slate-400 text-xs leading-relaxed font-light group-hover:text-slate-300 transition-colors">
+                <p className="text-slate-400 text-xs leading-relaxed font-light group-hover:text-slate-300 transition-colors duration-300">
                   {s.desc}
                 </p>
               </div>
 
               {/* Bottom Action Area */}
-              <div className="relative z-10 w-full pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-primary transition-colors">
-                <span className="uppercase tracking-widest text-[10px]">Saiba Mais</span>
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-primary group-hover:text-slate-950 group-hover:border-primary transition-all duration-300">
-                  <ArrowUpRight size={14} />
+              <div className="relative z-10 w-full pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-primary transition-colors duration-300">
+                <span className="uppercase tracking-[0.2em] text-[9px] font-mono">Contratar</span>
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-primary group-hover:text-slate-950 group-hover:border-primary transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                  <ArrowUpRight size={12} className="group-hover:rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           );
         })}
       </div>

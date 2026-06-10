@@ -6,95 +6,116 @@ export default function About() {
   const coreValues = [
     {
       icon: Shield,
-      title: 'Segurança Absoluta',
+      title: 'Segurança Total',
       desc: 'Blindagem fiscal e conformidade rigorosa com a legislação para proteger seu patrimônio.',
+      num: '01',
     },
     {
       icon: Target,
-      title: 'Foco em Resultados',
+      title: 'Foco em Lucro',
       desc: 'Planejamento ativo para reduzir seus impostos legalmente e aumentar sua margem de lucro.',
+      num: '02',
     },
     {
       icon: Users,
-      title: 'Atendimento Elite',
+      title: 'Atendimento Sênior',
       desc: 'Comunicação direta com especialistas prontos para responder às suas dúvidas sem complicação.',
+      num: '03',
     },
   ];
 
   return (
-    <section id="sobre" className="py-24 px-6 relative overflow-hidden bg-[#0A1120]/40 border-y border-white/5">
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+    <section id="sobre" className="py-28 px-6 relative overflow-hidden bg-[#0A1120]/20 border-y border-white/5">
+      {/* Decorative vertical lines and dots */}
+      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-white/[0.01] pointer-events-none hidden lg:block"></div>
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: Expert Photo with visual frames */}
+      {/* Large faint background watermark for design craft */}
+      <div className="hidden lg:block absolute -right-16 top-10 text-[10rem] font-black text-white/[0.01] tracking-widest uppercase pointer-events-none select-none font-display">
+        ESTRATÉGIA
+      </div>
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+        {/* Left Column: Overlapping Layered Image */}
         <div className="lg:col-span-5 relative group">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            {/* Geometric Glowing Frame */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary to-primary-light rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"></div>
+            {/* Background glowing panel */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary to-primary-light rounded-[2rem] opacity-10 blur-2xl group-hover:opacity-20 transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"></div>
             
-            <div className="relative border border-white/10 rounded-3xl overflow-hidden shadow-2xl bg-[#0A1120] p-3">
+            {/* Main Picture Frame */}
+            <div className="relative border border-white/5 rounded-[2rem] overflow-hidden bg-[#0A1120]/80 p-4 transition-fluid hover:scale-101">
               <img
                 src="/expert_portrait.png"
                 alt="Especialista Tributário da Visionária Contabilidade"
-                className="w-full h-[450px] object-cover rounded-2xl group-hover:scale-102 transition-transform duration-500"
+                className="w-full h-[480px] object-cover rounded-2xl group-hover:scale-103 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
               />
               
-              {/* Overlay Card */}
-              <div className="absolute bottom-8 left-8 right-8 glassmorphism p-5 rounded-2xl border border-primary/20 shadow-lg">
+              {/* Overlay Badge styled like an architecture tag */}
+              <div className="absolute bottom-8 left-8 right-8 glassmorphism p-5 rounded-2xl border border-primary/15 shadow-xl transition-fluid hover:border-primary/40">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Sparkles className="text-primary" size={18} />
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
+                    <Sparkles className="text-primary" size={16} />
                   </div>
-                  <div>
-                    <p className="text-xs text-slate-400 uppercase tracking-widest leading-none">Consultoria Premium</p>
-                    <p className="text-sm font-extrabold text-white mt-1">Inteligência Estrutural</p>
+                  <div className="text-left">
+                    <p className="text-[9px] text-primary uppercase tracking-widest font-mono leading-none">ESTUDO ANUAL // 2026</p>
+                    <p className="text-xs font-bold text-white mt-1">Conformidade e Elisão Fiscal</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Decorative Corner Accents */}
-            <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-primary rounded-tl-lg"></div>
-            <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-primary rounded-br-lg"></div>
+            {/* Asymmetrical Frame Accents */}
+            <div className="absolute -top-3 -left-3 w-10 h-10 border-t border-l border-primary/30 rounded-tl-xl transition-all group-hover:-top-4 group-hover:-left-4"></div>
+            <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b border-r border-primary/30 rounded-br-xl transition-all group-hover:-bottom-4 group-hover:-right-4"></div>
           </motion.div>
         </div>
 
-        {/* Right Column: Narrative & Details */}
+        {/* Right Column: Fluid text layouts */}
         <div className="lg:col-span-7 text-left">
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-xs uppercase tracking-[0.25em] font-extrabold text-primary block mb-3">
-              Quem é a Visionária
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-6 leading-tight">
-              A contabilidade estratégica que seu negócio precisa para <span className="font-serif italic font-normal text-primary text-glow">crescer</span>.
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-6 h-[1px] bg-primary"></span>
+              <span className="text-[10px] uppercase tracking-[0.25em] font-extrabold text-primary font-mono">// SOBRE A VISIONÁRIA</span>
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-6 leading-[1.15] tracking-tight">
+              A contabilidade que seu negócio precisa para crescer sem <span className="font-serif italic font-normal text-primary text-glow">limites</span>.
             </h2>
+            
             <p className="text-slate-400 leading-relaxed mb-6 font-light">
-              Na **Visionária Contabilidade**, acreditamos que a contabilidade tradicional é apenas a base. Nossa missão é ir muito além de emitir guias de impostos; nós atuamos como verdadeiros parceiros estratégicos do seu negócio.
+              Na **Visionária**, rompemos a barreira da contabilidade engessada. Acreditamos que emitir guias fiscais e cumprir prazos é apenas o básico. Nossa real atuação é como **parceiros de elisão fiscal e inteligência societária**.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-10 font-light">
-              Combinamos tecnologia inteligente com uma assessoria humanizada e profundo conhecimento da complexa legislação fiscal brasileira. Analisamos cada detalhe operacional da sua empresa para identificar oportunidades legais de redução tributária e otimização financeira.
+            
+            <p className="text-slate-400 leading-relaxed mb-12 font-light">
+              Desenhamos estruturas fiscais sob medida que eliminam custos desnecessários dentro dos limites da lei. Com um time experiente focado no atendimento direto e humanizado, garantimos que suas decisões corporativas sejam tomadas sob os melhores pilares tributários do país.
             </p>
 
-            {/* Core Values Grid */}
+            {/* Borderless Asymmetric Core Values */}
             <div className="grid md:grid-cols-3 gap-6">
               {coreValues.map((val, i) => (
-                <div key={i} className="p-5 bg-white/5 border border-white/5 rounded-2xl hover:border-primary/20 hover:bg-white/8 transition-all">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <val.icon className="text-primary" size={20} />
+                <div 
+                  key={i} 
+                  className="p-6 bg-[#0A1120]/45 border border-white/5 rounded-2xl hover:border-primary/25 hover:bg-white/[0.02] transition-fluid hover:-translate-y-1"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <val.icon className="text-primary" size={18} />
+                    </div>
+                    <span className="text-[10px] font-mono text-slate-600">{val.num}</span>
                   </div>
                   <h3 className="text-sm font-bold text-white font-display mb-2">{val.title}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">{val.desc}</p>
+                  <p className="text-xs text-slate-400 leading-relaxed font-light">{val.desc}</p>
                 </div>
               ))}
             </div>
