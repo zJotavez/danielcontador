@@ -1,0 +1,6 @@
+{
+  "name": "Visionária Contabilidade",
+  "description": "Site premium para escritório de contabilidade focado em tecnologia e estratégia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
