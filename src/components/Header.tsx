@@ -12,12 +12,12 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#FCFAF6]/75 backdrop-blur-md border-b border-slate-200/50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#FFFFFF]/80 backdrop-blur-md border-b border-slate-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#inicio" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-gradient-to-br from-primary via-[#D4AF37] to-primary-dark rounded-xl flex items-center justify-center shadow-lg shadow-primary/10 group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-            <span className="text-[#FCFAF6] font-black text-xl italic font-display">V</span>
+            <span className="text-white font-black text-xl italic font-display">V</span>
           </div>
           <div className="flex flex-col">
             <span className="text-md font-extrabold tracking-[0.15em] text-slate-900 font-display leading-none group-hover:text-primary transition-colors duration-300">
@@ -44,7 +44,7 @@ export default function Header() {
           ))}
         </div>
 
-        {/* WhatsApp Button (Visible on all screens) */}
+        {/* WhatsApp Button */}
         <a 
           href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+fiscal+para+minha+empresa."
           target="_blank"

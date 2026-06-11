@@ -29,23 +29,23 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="pt-40 pb-24 px-6 relative overflow-hidden bg-[#FCFAF6]">
-      {/* Background Image with Light Vignette Overlay */}
+    <section id="inicio" className="pt-40 pb-24 px-6 relative overflow-hidden bg-white">
+      {/* Background Image with Pure White Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="/hero_clean_bg.png"
           alt="Visionária Contabilidade Escritório"
-          className="w-full h-full object-cover opacity-35"
+          className="w-full h-full object-cover opacity-[0.22]"
         />
-        {/* Soft designer fade from left to right (light theme) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FCFAF6] via-[#FCFAF6]/98 to-[#FCFAF6]/80 lg:to-transparent"></div>
+        {/* Soft designer fade from left to right (fading to pure white) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 lg:to-transparent"></div>
         {/* Technical Guidelines overlay */}
-        <div className="absolute inset-0 tech-grid-dots opacity-30"></div>
+        <div className="absolute inset-0 tech-grid-dots opacity-25"></div>
       </div>
 
-      {/* Decorative vertical lines for designer structure */}
-      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-slate-200/40 pointer-events-none hidden lg:block"></div>
-      <div className="absolute top-0 left-[75%] w-[1px] h-full bg-slate-200/40 pointer-events-none hidden lg:block"></div>
+      {/* Decorative vertical lines */}
+      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-slate-100 pointer-events-none hidden lg:block"></div>
+      <div className="absolute top-0 left-[75%] w-[1px] h-full bg-slate-100 pointer-events-none hidden lg:block"></div>
 
       {/* Geolocation visual markers */}
       <div className="hidden xl:block absolute left-10 bottom-10 text-[9px] font-mono text-slate-400 tracking-[0.3em] uppercase pointer-events-none">
@@ -72,7 +72,7 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-[3.75rem] font-bold font-display tracking-tight text-slate-900 mb-8 leading-[1.05]">
-              Por trás de cada CNPJ, existe um <span className="font-serif italic font-normal text-primary text-glow font-light">sonho</span> que merece ser protegido.
+              Por trás de cada CNPJ, existe um <span className="font-serif italic font-normal text-gradient-sunset text-glow font-bold">sonho</span> que merece ser protegido.
             </h1>
 
             <p className="text-md md:text-lg text-slate-600 mb-10 leading-relaxed max-w-xl font-light">
@@ -94,40 +94,40 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Asymmetrical Metric Indicators (Dark/Slate accents) */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-200/50 max-w-lg">
+            {/* Asymmetrical Metric Indicators with distinct colors */}
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-200/60 max-w-lg">
               <div className="border-l border-slate-200 pl-4">
-                <p className="text-2xl font-bold font-display text-slate-900 tracking-tight">R$ 14M+</p>
+                <p className="text-2xl font-bold font-display text-primary tracking-tight text-glow">R$ 14M+</p>
                 <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-1">// Economia Gerada</p>
               </div>
               <div className="border-l border-slate-200 pl-4">
-                <p className="text-2xl font-bold font-display text-slate-900 tracking-tight">99.8%</p>
+                <p className="text-2xl font-bold font-display text-blue-600 tracking-tight">99.8%</p>
                 <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-1">// Conformidade Fiscal</p>
               </div>
               <div className="border-l border-slate-200 pl-4">
-                <p className="text-2xl font-bold font-display text-slate-900 tracking-tight">100%</p>
+                <p className="text-2xl font-bold font-display text-emerald-600 tracking-tight">100%</p>
                 <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-1">// Digital e Humano</p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Right Column: Stripe-like Custom Simulator Widget in Light Mode */}
+        {/* Right Column: Stripe-like Custom Simulator Widget in Light Mode with vibrant colors */}
         <div className="lg:col-span-5">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="glassmorphism-premium p-8 lg:p-10 rounded-[2rem] shadow-neon-glow relative border border-slate-200/60"
+            className="glassmorphism-premium p-8 lg:p-10 rounded-[2rem] shadow-neon-glow relative border border-slate-200"
           >
             {/* Technical aesthetic badge */}
-            <div className="absolute top-0 right-10 -translate-y-1/2 px-4 py-1.5 bg-[#FCFAF6] text-primary border border-primary/20 font-mono text-[9px] uppercase tracking-widest rounded-full shadow-md">
+            <div className="absolute top-0 right-10 -translate-y-1/2 px-4 py-1.5 bg-white text-primary border border-primary/20 font-mono text-[9px] uppercase tracking-widest rounded-full shadow-md">
               SIMULATOR_V.2.8
             </div>
 
             <div className="mb-8 text-left">
               <h3 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-                <TrendingUp className="text-primary" size={18} />
+                <TrendingUp className="text-primary animate-pulse" size={18} />
                 Inteligência de Lucro
               </h3>
               <p className="text-xs text-slate-500 mt-1 font-light">
@@ -135,23 +135,23 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Segment Selector */}
+            {/* Segment Selector with individual vibrant colors */}
             <div className="mb-8 text-left">
               <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest block mb-3">
                 [01] SELECIONE SEU SEGMENTO
               </span>
-              <div className="grid grid-cols-3 gap-2 bg-[#FCFAF6]/90 p-1 rounded-xl border border-slate-200/50 shadow-inner">
+              <div className="grid grid-cols-3 gap-2 bg-slate-50 p-1 rounded-xl border border-slate-200/50 shadow-inner">
                 {[
-                  { id: 'tecnologia', label: 'Tecnologia' },
-                  { id: 'servicos', label: 'Serviços' },
-                  { id: 'comercio', label: 'Comércio' },
+                  { id: 'tecnologia', label: 'Tecnologia', activeColor: 'bg-blue-600 text-white shadow-neon-blue' },
+                  { id: 'servicos', label: 'Serviços', activeColor: 'bg-emerald-600 text-white shadow-neon-green' },
+                  { id: 'comercio', label: 'Comércio', activeColor: 'bg-rose-500 text-white shadow-neon-coral' },
                 ].map((seg) => (
                   <button
                     key={seg.id}
                     onClick={() => setSegment(seg.id)}
                     className={`py-2 px-1 text-center rounded-lg text-xs font-bold transition-fluid ${
                       segment === seg.id
-                        ? 'bg-primary text-slate-950 shadow-sm font-extrabold'
+                        ? `${seg.activeColor} font-extrabold`
                         : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100/50'
                     }`}
                   >
@@ -161,7 +161,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Revenue Input Slider */}
+            {/* Revenue Input Slider with colored accent */}
             <div className="mb-8 text-left">
               <div className="flex justify-between items-end mb-3">
                 <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">
@@ -187,9 +187,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Designer comparison display (Light Mode) */}
-            <div className="bg-slate-50/70 border border-slate-200/50 rounded-2xl p-6 mb-8 text-left">
-              <div className="grid grid-cols-2 gap-6 divide-x divide-slate-200/50">
+            {/* Designer comparison display (Vibrant Light Mode) */}
+            <div className="bg-blue-50/20 border border-blue-100 rounded-2xl p-6 mb-8 text-left shadow-sm">
+              <div className="grid grid-cols-2 gap-6 divide-x divide-blue-100">
                 <div className="flex flex-col">
                   <span className="text-[9px] uppercase text-slate-400 tracking-wider font-mono">Custo Comum</span>
                   <span className="text-lg font-bold text-red-500 font-mono mt-1 flex items-center gap-0.5">
@@ -204,9 +204,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-slate-200/50 flex flex-col items-start justify-center">
+              <div className="mt-6 pt-5 border-t border-blue-100 flex flex-col items-start justify-center">
                 <span className="text-[9px] text-slate-400 uppercase tracking-widest font-mono">Economia Estimada Anual</span>
-                <span className="text-3xl font-extrabold text-primary font-display mt-2 tracking-tight leading-none">
+                <span className="text-3xl font-extrabold text-gradient-sunset font-display mt-2 tracking-tight leading-none">
                   {formatCurrency(yearlySavings)}
                 </span>
               </div>

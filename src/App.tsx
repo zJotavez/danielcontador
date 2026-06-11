@@ -12,16 +12,16 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#FCFAF6] text-slate-800 font-sans relative overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-500">
-      {/* Background Tech Grid (Light Mode Accent) */}
+    <div className="min-h-screen bg-white text-slate-800 font-sans relative overflow-x-hidden selection:bg-primary selection:text-white">
+      {/* Background Tech Grid (Light Mode Accent on Pure White) */}
       <div 
-        className="absolute inset-0 opacity-40 pointer-events-none" 
+        className="absolute inset-0 opacity-35 pointer-events-none" 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(197, 160, 89, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.04) 1px, transparent 1px)', 
+          backgroundImage: 'linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px)', 
           backgroundSize: '60px 60px' 
         }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#FCFAF6] via-[#FAF6EE] to-[#FFFFFF] opacity-90 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-white pointer-events-none"></div>
       
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />

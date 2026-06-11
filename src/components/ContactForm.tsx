@@ -22,7 +22,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contato" className="py-24 px-6 relative overflow-hidden bg-slate-50/30 border-t border-slate-200/50">
+    <section id="contato" className="py-24 px-6 relative overflow-hidden bg-white border-t border-slate-100">
       {/* Glow highlight */}
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -34,7 +34,7 @@ export default function ContactForm() {
               Fale Conosco
             </span>
             <h2 className="text-3xl md:text-5xl font-bold font-display text-slate-900 mb-6">
-              Agende um Diagnóstico <span className="font-serif italic font-normal text-primary text-glow font-light">Gratuito</span>
+              Agende um Diagnóstico <span className="font-serif italic font-normal text-gradient-sunset text-glow font-bold">Gratuito</span>
             </h2>
             <p className="text-slate-600 leading-relaxed mb-8 font-light">
               Nossos especialistas estão prontos para analisar sua estrutura tributária atual e apresentar um plano prático de economia para sua empresa. Preencha o formulário e dê o primeiro passo.
@@ -46,20 +46,20 @@ export default function ContactForm() {
                 href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Gostaria+de+agendar+um+diagn%C3%B3stico+fiscal+para+minha+empresa."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-white border border-slate-200/60 hover:border-primary/30 rounded-2xl transition-all group shadow-sm"
+                className="flex items-center gap-4 p-4 bg-white border border-slate-200 hover:border-green-500/30 rounded-2xl transition-all group shadow-sm hover:shadow-md"
               >
-                <div className="w-11 h-11 bg-green-500/10 text-green-600 group-hover:bg-green-500 group-hover:text-white rounded-xl flex items-center justify-center transition-all duration-300">
+                <div className="w-11 h-11 bg-green-500/10 text-green-600 group-hover:bg-green-500 group-hover:text-white rounded-xl flex items-center justify-center transition-all duration-300 border border-green-200/50">
                   <MessageSquare size={20} />
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 uppercase tracking-wider">Atendimento Imediato</p>
-                  <p className="text-sm font-bold text-slate-800 mt-0.5">Falar direto pelo WhatsApp</p>
+                  <p className="text-sm font-bold text-slate-800 group-hover:text-green-600 transition-colors duration-300 mt-0.5">Falar direto pelo WhatsApp</p>
                 </div>
               </a>
 
               {/* Email direct */}
-              <div className="flex items-center gap-4 p-4 bg-white border border-slate-200/60 rounded-2xl shadow-sm">
-                <div className="w-11 h-11 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+              <div className="flex items-center gap-4 p-4 bg-white border border-slate-200/60 rounded-2xl shadow-sm hover:border-blue-500/20 transition-all duration-300">
+                <div className="w-11 h-11 bg-blue-500/10 text-blue-600 rounded-xl flex items-center justify-center border border-blue-200/50">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -69,8 +69,8 @@ export default function ContactForm() {
               </div>
 
               {/* Location */}
-              <div className="flex items-center gap-4 p-4 bg-white border border-slate-200/60 rounded-2xl shadow-sm">
-                <div className="w-11 h-11 bg-blue-500/10 text-blue-600 rounded-xl flex items-center justify-center">
+              <div className="flex items-center gap-4 p-4 bg-white border border-slate-200/60 rounded-2xl shadow-sm hover:border-amber-500/20 transition-all duration-300">
+                <div className="w-11 h-11 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center border border-amber-200/50">
                   <MapPin size={20} />
                 </div>
                 <div>
@@ -93,7 +93,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glassmorphism-premium p-8 lg:p-10 rounded-3xl border border-slate-200/65 shadow-neon-glow h-full flex flex-col justify-center"
+            className="glassmorphism-premium p-8 lg:p-10 rounded-3xl border border-slate-200 hover:border-primary/40 transition-fluid shadow-neon-glow h-full flex flex-col justify-center"
           >
             {submitted ? (
               <motion.div

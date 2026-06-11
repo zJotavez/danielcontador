@@ -21,6 +21,11 @@ export default function HowWeHelp() {
         'Contrato Social sob medida para proteção societária',
       ],
       ctaText: 'Quero Abrir Meu CNPJ',
+      activeTabStyle: 'bg-blue-50/50 border-blue-500/80 shadow-neon-blue text-slate-950 scale-[1.01]',
+      activeIconStyle: 'bg-blue-600 text-white shadow-sm border border-blue-400',
+      activeTitleColor: 'text-blue-700',
+      checkmarkColor: 'text-blue-600',
+      btnStyle: 'bg-blue-600 hover:bg-blue-700 text-white shadow-neon-blue hover:scale-102 border border-blue-500',
     },
     {
       id: 'reducao',
@@ -37,6 +42,11 @@ export default function HowWeHelp() {
         'Prevenção ativa contra autuações e malha fina',
       ],
       ctaText: 'Solicitar Diagnóstico Grátis',
+      activeTabStyle: 'bg-amber-50/50 border-primary/80 shadow-neon-primary text-slate-950 scale-[1.01]',
+      activeIconStyle: 'bg-primary text-slate-950 shadow-sm border border-primary/20',
+      activeTitleColor: 'text-primary-dark',
+      checkmarkColor: 'text-primary',
+      btnStyle: 'bg-primary hover:bg-[#D4AF37] text-slate-950 shadow-neon-primary hover:scale-102 border border-primary/25',
     },
     {
       id: 'bpo',
@@ -53,11 +63,16 @@ export default function HowWeHelp() {
         'Dashboard de fluxo de caixa dinâmico e enxuto',
       ],
       ctaText: 'Falar com Consultor BPO',
+      activeTabStyle: 'bg-emerald-50/50 border-emerald-500/80 shadow-neon-green text-slate-950 scale-[1.01]',
+      activeIconStyle: 'bg-emerald-600 text-white shadow-sm border border-emerald-400',
+      activeTitleColor: 'text-emerald-700',
+      checkmarkColor: 'text-emerald-600',
+      btnStyle: 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-neon-green hover:scale-102 border border-emerald-500',
     },
   ];
 
   return (
-    <section id="como-ajudar" className="py-28 px-6 max-w-7xl mx-auto relative z-10">
+    <section id="como-ajudar" className="py-28 px-6 max-w-7xl mx-auto relative z-10 bg-white">
       <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-400 tracking-[0.2em] uppercase pointer-events-none hidden xl:block">
         // SERVICE MATCHING ENGINE
       </div>
@@ -68,14 +83,14 @@ export default function HowWeHelp() {
           <span className="text-[10px] uppercase tracking-[0.25em] font-extrabold text-primary font-mono">// TRIAGEM DE NECESSIDADES</span>
         </div>
         <h2 className="text-3xl md:text-5xl font-bold font-display text-slate-900 mb-4 tracking-tight">
-          Como a Visionária Pode Ajudar <span className="font-serif italic font-normal text-primary text-glow font-light">Hoje</span>?
+          Como a Visionária Pode Ajudar <span className="font-serif italic font-normal text-gradient-sunset text-glow font-bold">Hoje</span>?
         </h2>
         <p className="text-slate-600 max-w-2xl font-light">
           Identifique o momento atual do seu negócio e veja o caminho planejado para sua economia e blindagem.
         </p>
       </div>
 
-      {/* Tabs Selector (Asymmetrical design tabs in Light Mode) */}
+      {/* Tabs Selector with Custom Active Styles */}
       <div className="flex flex-col md:flex-row gap-4 mb-12 justify-center">
         {options.map((opt, idx) => {
           const IconComp = opt.icon;
@@ -86,8 +101,8 @@ export default function HowWeHelp() {
               onClick={() => setActiveTab(idx)}
               className={`flex items-center gap-5 p-6 rounded-2xl text-left border transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:w-1/3 relative group ${
                 isActive
-                  ? 'bg-white border-primary/55 shadow-neon-primary text-slate-950 scale-[1.01]'
-                  : 'bg-slate-100/50 border-slate-200/50 text-slate-500 hover:bg-slate-100 hover:border-slate-300/60'
+                  ? opt.activeTabStyle
+                  : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100 hover:border-slate-300'
               }`}
             >
               <div className="absolute top-3 right-4 text-[9px] font-mono text-slate-400">
@@ -96,7 +111,7 @@ export default function HowWeHelp() {
 
               <div
                 className={`w-11 h-11 rounded-xl flex items-center justify-center transition-fluid ${
-                  isActive ? 'bg-primary text-slate-950 shadow-sm border border-primary/20' : 'bg-slate-200/50 text-slate-600'
+                  isActive ? opt.activeIconStyle : 'bg-slate-200/50 text-slate-600'
                 }`}
               >
                 <IconComp size={20} />
@@ -105,7 +120,7 @@ export default function HowWeHelp() {
                 <p className="text-[9px] font-mono tracking-widest text-slate-400 uppercase leading-none mb-1">
                   {idx === 0 ? 'Constituição' : idx === 1 ? 'Elisão Fiscal' : 'Tesouraria'}
                 </p>
-                <h3 className={`text-sm font-extrabold font-display ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                <h3 className={`text-sm font-extrabold font-display ${isActive ? opt.activeTitleColor : 'text-slate-700'}`}>
                   {opt.title}
                 </h3>
               </div>
@@ -126,7 +141,7 @@ export default function HowWeHelp() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="grid lg:grid-cols-12 gap-12 items-center bg-white border border-slate-200/50 rounded-3xl p-8 lg:p-12 shadow-lg relative overflow-hidden"
+                className="grid lg:grid-cols-12 gap-12 items-center bg-white border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-lg relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -147,7 +162,7 @@ export default function HowWeHelp() {
                   <div className="grid md:grid-cols-2 gap-4 mb-8">
                     {opt.benefits.map((benefit, bIdx) => (
                       <div key={bIdx} className="flex items-start gap-2.5 text-xs text-slate-600">
-                        <CheckCircle2 className="text-primary mt-0.5 shrink-0" size={14} />
+                        <CheckCircle2 className={`${opt.checkmarkColor} mt-0.5 shrink-0`} size={14} />
                         <span className="leading-tight font-light">{benefit}</span>
                       </div>
                     ))}
@@ -155,7 +170,7 @@ export default function HowWeHelp() {
 
                   <a
                     href="#contato"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-slate-950 hover:bg-[#D4AF37] font-extrabold rounded-xl transition-fluid uppercase tracking-[0.2em] text-[10px] shadow-lg shadow-primary/10 hover:scale-102 border border-primary/25"
+                    className={`inline-flex items-center gap-2 px-8 py-4 font-extrabold rounded-xl transition-fluid uppercase tracking-[0.2em] text-[10px] ${opt.btnStyle}`}
                   >
                     {opt.ctaText} <ChevronRight size={12} />
                   </a>
@@ -165,7 +180,7 @@ export default function HowWeHelp() {
                 <div className="lg:col-span-5 relative group">
                   <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
                   
-                  <div className="relative overflow-hidden rounded-2xl border border-slate-200/60 shadow-lg">
+                  <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
                     <img
                       src={opt.img}
                       alt={opt.title}

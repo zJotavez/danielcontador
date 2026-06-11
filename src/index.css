@@ -6,8 +6,8 @@
   --color-primary-light: #E0C082;
   --color-primary-dark: #8E6F34;
   
-  /* Updated to Light & Clean Champagne Palette */
-  --color-background-dark: #FCFAF6;
+  /* Pure White Background Theme */
+  --color-background-dark: #FFFFFF;
   --color-background-card: #FFFFFF;
   --color-border-card: rgba(197, 160, 89, 0.08);
   
@@ -41,7 +41,7 @@
 
 @layer base {
   body {
-    @apply antialiased bg-[#FCFAF6] text-slate-800 overflow-x-hidden;
+    @apply antialiased bg-[#FFFFFF] text-slate-800 overflow-x-hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   
@@ -55,42 +55,80 @@
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Premium Light Glassmorphism */
+  /* Premium Light Glassmorphism with Color Accents */
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(197, 160, 89, 0.1);
+    border: 1px solid rgba(226, 232, 240, 0.8);
   }
   
   .glassmorphism-premium {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(252, 250, 246, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(197, 160, 89, 0.15);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+  }
+
+  /* Text Gradient Presets for Rich Colors */
+  .text-gradient-sunset {
+    background: linear-gradient(135deg, #C5A059 10%, #F43F5E 50%, #2563EB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #2563EB 30%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C5A059 30%, #8E6F34 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #059669 30%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .text-glow {
-    text-shadow: 0 0 30px rgba(197, 160, 89, 0.22);
+    text-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
   }
 
+  /* Glowing Colorful Shadows */
   .shadow-neon-primary {
     box-shadow: 0 10px 40px rgba(197, 160, 89, 0.08);
   }
 
-  .shadow-neon-glow {
-    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.4);
+  .shadow-neon-blue {
+    box-shadow: 0 10px 40px rgba(37, 99, 235, 0.12);
   }
 
-  /* Fade out scrolling cards near the screen edges on light theme */
+  .shadow-neon-green {
+    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.12);
+  }
+
+  .shadow-neon-coral {
+    box-shadow: 0 10px 40px rgba(244, 63, 94, 0.12);
+  }
+
+  .shadow-neon-glow {
+    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.12), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Fade out scrolling marquee cards near edges */
   .mask-gradient {
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 
-  /* Designer tech grid dots in amber/gold */
+  /* Technical grids in golden amber */
   .tech-grid-dots {
-    background-image: radial-gradient(rgba(197, 160, 89, 0.14) 1px, transparent 0);
+    background-image: radial-gradient(rgba(197, 160, 89, 0.12) 1px, transparent 0);
     background-size: 24px 24px;
   }
 
@@ -99,14 +137,14 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #FCFAF6;
+    background: #FFFFFF;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(197, 160, 89, 0.25);
+    background: rgba(197, 160, 89, 0.3);
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(197, 160, 89, 0.55);
+    background: rgba(197, 160, 89, 0.6);
   }
 
   /* Glowing light path flow for crossing lines */
