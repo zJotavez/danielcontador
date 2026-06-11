@@ -58,24 +58,24 @@ export default function HowWeHelp() {
 
   return (
     <section id="como-ajudar" className="py-28 px-6 max-w-7xl mx-auto relative z-10">
-      <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-700 tracking-[0.2em] uppercase pointer-events-none hidden xl:block">
+      <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-400 tracking-[0.2em] uppercase pointer-events-none hidden xl:block">
         // SERVICE MATCHING ENGINE
       </div>
 
       <div className="text-left mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="w-6 h-[1px] bg-primary"></span>
+          <span className="w-6 h-[1.5px] bg-primary"></span>
           <span className="text-[10px] uppercase tracking-[0.25em] font-extrabold text-primary font-mono">// TRIAGEM DE NECESSIDADES</span>
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-4 tracking-tight">
-          Como a Visionária Pode Ajudar <span className="font-serif italic font-normal text-primary text-glow">Hoje</span>?
+        <h2 className="text-3xl md:text-5xl font-bold font-display text-slate-900 mb-4 tracking-tight">
+          Como a Visionária Pode Ajudar <span className="font-serif italic font-normal text-primary text-glow font-light">Hoje</span>?
         </h2>
-        <p className="text-slate-400 max-w-2xl font-light">
+        <p className="text-slate-600 max-w-2xl font-light">
           Identifique o momento atual do seu negócio e veja o caminho planejado para sua economia e blindagem.
         </p>
       </div>
 
-      {/* Tabs Selector (Asymmetrical design tabs) */}
+      {/* Tabs Selector (Asymmetrical design tabs in Light Mode) */}
       <div className="flex flex-col md:flex-row gap-4 mb-12 justify-center">
         {options.map((opt, idx) => {
           const IconComp = opt.icon;
@@ -86,26 +86,26 @@ export default function HowWeHelp() {
               onClick={() => setActiveTab(idx)}
               className={`flex items-center gap-5 p-6 rounded-2xl text-left border transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:w-1/3 relative group ${
                 isActive
-                  ? 'bg-[#0A1120]/75 border-primary/40 shadow-neon-primary text-white scale-[1.01]'
-                  : 'bg-white/[0.02] border-white/5 text-slate-400 hover:bg-white/[0.04] hover:border-white/10'
+                  ? 'bg-white border-primary/55 shadow-neon-primary text-slate-950 scale-[1.01]'
+                  : 'bg-slate-100/50 border-slate-200/50 text-slate-500 hover:bg-slate-100 hover:border-slate-300/60'
               }`}
             >
-              <div className="absolute top-3 right-4 text-[9px] font-mono text-slate-600">
+              <div className="absolute top-3 right-4 text-[9px] font-mono text-slate-400">
                 {opt.num}
               </div>
 
               <div
                 className={`w-11 h-11 rounded-xl flex items-center justify-center transition-fluid ${
-                  isActive ? 'bg-primary text-slate-950 shadow-md border border-primary/20' : 'bg-white/5 text-slate-300'
+                  isActive ? 'bg-primary text-slate-950 shadow-sm border border-primary/20' : 'bg-slate-200/50 text-slate-600'
                 }`}
               >
                 <IconComp size={20} />
               </div>
               <div>
-                <p className="text-[9px] font-mono tracking-widest text-slate-500 uppercase leading-none mb-1">
+                <p className="text-[9px] font-mono tracking-widest text-slate-400 uppercase leading-none mb-1">
                   {idx === 0 ? 'Constituição' : idx === 1 ? 'Elisão Fiscal' : 'Tesouraria'}
                 </p>
-                <h3 className={`text-sm font-extrabold font-display ${isActive ? 'text-primary-light' : 'text-slate-200'}`}>
+                <h3 className={`text-sm font-extrabold font-display ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                   {opt.title}
                 </h3>
               </div>
@@ -126,7 +126,7 @@ export default function HowWeHelp() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="grid lg:grid-cols-12 gap-12 items-center bg-[#0A1120]/45 border border-white/5 rounded-3xl p-8 lg:p-12 backdrop-blur-xl relative overflow-hidden"
+                className="grid lg:grid-cols-12 gap-12 items-center bg-white border border-slate-200/50 rounded-3xl p-8 lg:p-12 shadow-lg relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -136,17 +136,17 @@ export default function HowWeHelp() {
                     // {opt.subtitle}
                   </span>
                   
-                  <h3 className="text-2xl md:text-3xl font-extrabold font-display text-white mb-6 tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mb-6 tracking-tight">
                     {opt.title}
                   </h3>
                   
-                  <p className="text-slate-400 leading-relaxed mb-8 font-light text-sm">
+                  <p className="text-slate-600 leading-relaxed mb-8 font-light text-sm">
                     {opt.desc}
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-8">
                     {opt.benefits.map((benefit, bIdx) => (
-                      <div key={bIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                      <div key={bIdx} className="flex items-start gap-2.5 text-xs text-slate-600">
                         <CheckCircle2 className="text-primary mt-0.5 shrink-0" size={14} />
                         <span className="leading-tight font-light">{benefit}</span>
                       </div>
@@ -163,15 +163,15 @@ export default function HowWeHelp() {
 
                 {/* Picture Content */}
                 <div className="lg:col-span-5 relative group">
-                  <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-xl pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
                   
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+                  <div className="relative overflow-hidden rounded-2xl border border-slate-200/60 shadow-lg">
                     <img
                       src={opt.img}
                       alt={opt.title}
                       className="w-full h-80 object-cover group-hover:scale-103 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     />
-                    <div className="absolute top-3 left-4 bg-black/60 border border-white/10 rounded px-2.5 py-1 text-[8px] font-mono text-slate-400 tracking-wider">
+                    <div className="absolute top-3 left-4 bg-black/60 border border-white/10 rounded px-2.5 py-1 text-[8px] font-mono text-slate-300 tracking-wider">
                       DOC_IMG // {opt.num}
                     </div>
                   </div>

@@ -29,21 +29,29 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="pt-40 pb-28 px-6 relative overflow-hidden bg-[#05080F]">
-      {/* Designer Background Details */}
-      <div className="absolute inset-0 tech-grid-dots opacity-40 pointer-events-none"></div>
-      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-white/[0.02] pointer-events-none hidden lg:block"></div>
-      <div className="absolute top-0 left-[75%] w-[1px] h-full bg-white/[0.02] pointer-events-none hidden lg:block"></div>
-      
-      {/* Moving Organic Light Blobs */}
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
-      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none"></div>
+    <section id="inicio" className="pt-40 pb-24 px-6 relative overflow-hidden bg-[#FCFAF6]">
+      {/* Background Image with Light Vignette Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="/hero_clean_bg.png"
+          alt="Visionária Contabilidade Escritório"
+          className="w-full h-full object-cover opacity-35"
+        />
+        {/* Soft designer fade from left to right (light theme) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FCFAF6] via-[#FCFAF6]/98 to-[#FCFAF6]/80 lg:to-transparent"></div>
+        {/* Technical Guidelines overlay */}
+        <div className="absolute inset-0 tech-grid-dots opacity-30"></div>
+      </div>
 
-      {/* Decorative Technical Labels */}
-      <div className="hidden xl:block absolute left-10 bottom-10 text-[9px] font-mono text-slate-600 tracking-[0.3em] uppercase pointer-events-none">
+      {/* Decorative vertical lines for designer structure */}
+      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-slate-200/40 pointer-events-none hidden lg:block"></div>
+      <div className="absolute top-0 left-[75%] w-[1px] h-full bg-slate-200/40 pointer-events-none hidden lg:block"></div>
+
+      {/* Geolocation visual markers */}
+      <div className="hidden xl:block absolute left-10 bottom-10 text-[9px] font-mono text-slate-400 tracking-[0.3em] uppercase pointer-events-none">
         VISIONÁRIA CORE V2.8 // BR-SP
       </div>
-      <div className="hidden xl:block absolute right-10 bottom-10 text-[9px] font-mono text-slate-600 tracking-[0.3em] uppercase pointer-events-none">
+      <div className="hidden xl:block absolute right-10 bottom-10 text-[9px] font-mono text-slate-400 tracking-[0.3em] uppercase pointer-events-none">
         LAT: 23.5505° S, LONG: 46.6333° W
       </div>
 
@@ -57,18 +65,18 @@ export default function Hero() {
           >
             {/* Fine line details for designer vibe */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-6 h-[1px] bg-primary"></span>
-              <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary-light font-mono">
+              <span className="w-6 h-[1.5px] bg-primary"></span>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary font-mono">
                 [01 // ESTRUTURA FISCAL INTELIGENTE]
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-[3.75rem] font-bold font-display tracking-tight text-white mb-8 leading-[1.05]">
+            <h1 className="text-4xl md:text-[3.75rem] font-bold font-display tracking-tight text-slate-900 mb-8 leading-[1.05]">
               Por trás de cada CNPJ, existe um <span className="font-serif italic font-normal text-primary text-glow font-light">sonho</span> que merece ser protegido.
             </h1>
 
-            <p className="text-md md:text-lg text-slate-400 mb-10 leading-relaxed max-w-xl font-light">
-              Não deixe o fruto do seu trabalho duro ser consumido por impostos desnecessários. Nós cuidamos da burocracia para você ter a liberdade de expandir seus horizontes.
+            <p className="text-md md:text-lg text-slate-600 mb-10 leading-relaxed max-w-xl font-light">
+              Não deixe o fruto do seu trabalho duro ser consumido por impostos desnecessários. Nós cuidamos da burocracia para você ter a liberdade de focar no que você faz de melhor: expandir seus horizontes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 mb-12">
@@ -80,61 +88,61 @@ export default function Hero() {
               </a>
               <a
                 href="#sobre"
-                className="px-8 py-4.5 bg-white/5 border border-white/5 hover:border-white/20 text-white font-bold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-center text-xs uppercase tracking-widest flex items-center justify-center"
+                className="px-8 py-4.5 bg-white border border-slate-200 hover:border-primary text-slate-700 font-bold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-center text-xs uppercase tracking-widest flex items-center justify-center shadow-sm"
               >
                 Conhecer a Visionária
               </a>
             </div>
 
-            {/* Asymmetrical Metric Indicators */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/5 max-w-lg">
-              <div className="border-l border-white/10 pl-4">
-                <p className="text-2xl font-bold font-display text-white tracking-tight">R$ 14M+</p>
-                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-1">// Economia Gerada</p>
+            {/* Asymmetrical Metric Indicators (Dark/Slate accents) */}
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-200/50 max-w-lg">
+              <div className="border-l border-slate-200 pl-4">
+                <p className="text-2xl font-bold font-display text-slate-900 tracking-tight">R$ 14M+</p>
+                <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-1">// Economia Gerada</p>
               </div>
-              <div className="border-l border-white/10 pl-4">
-                <p className="text-2xl font-bold font-display text-white tracking-tight">99.8%</p>
-                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-1">// Conformidade Fiscal</p>
+              <div className="border-l border-slate-200 pl-4">
+                <p className="text-2xl font-bold font-display text-slate-900 tracking-tight">99.8%</p>
+                <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-1">// Conformidade Fiscal</p>
               </div>
-              <div className="border-l border-white/10 pl-4">
-                <p className="text-2xl font-bold font-display text-white tracking-tight">100%</p>
-                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-1">// Contabilidade Digital</p>
+              <div className="border-l border-slate-200 pl-4">
+                <p className="text-2xl font-bold font-display text-slate-900 tracking-tight">100%</p>
+                <p className="text-[9px] text-slate-400 uppercase tracking-widest font-mono mt-1">// Digital e Humano</p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Right Column: Stripe-like Custom Simulator Widget */}
+        {/* Right Column: Stripe-like Custom Simulator Widget in Light Mode */}
         <div className="lg:col-span-5">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="glassmorphism-premium p-8 lg:p-10 rounded-[2rem] shadow-neon-glow relative border border-white/10"
+            className="glassmorphism-premium p-8 lg:p-10 rounded-[2rem] shadow-neon-glow relative border border-slate-200/60"
           >
-            {/* Tiny technical aesthetic badge */}
-            <div className="absolute top-0 right-10 -translate-y-1/2 px-4 py-1.5 bg-[#0A1120] text-primary border border-primary/20 font-mono text-[9px] uppercase tracking-widest rounded-full shadow-lg">
+            {/* Technical aesthetic badge */}
+            <div className="absolute top-0 right-10 -translate-y-1/2 px-4 py-1.5 bg-[#FCFAF6] text-primary border border-primary/20 font-mono text-[9px] uppercase tracking-widest rounded-full shadow-md">
               SIMULATOR_V.2.8
             </div>
 
             <div className="mb-8 text-left">
-              <h3 className="text-lg font-bold text-white font-display flex items-center gap-2">
+              <h3 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
                 <TrendingUp className="text-primary" size={18} />
                 Inteligência de Lucro
               </h3>
-              <p className="text-xs text-slate-400 mt-1 font-light">
+              <p className="text-xs text-slate-500 mt-1 font-light">
                 Descubra quanta receita você está deixando na mesa com as alíquotas normais.
               </p>
             </div>
 
-            {/* Segment Selector (Stripe-like tabs) */}
+            {/* Segment Selector */}
             <div className="mb-8 text-left">
-              <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest block mb-3">
+              <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest block mb-3">
                 [01] SELECIONE SEU SEGMENTO
               </span>
-              <div className="grid grid-cols-3 gap-2 bg-[#05080F]/65 p-1 rounded-xl border border-white/5">
+              <div className="grid grid-cols-3 gap-2 bg-[#FCFAF6]/90 p-1 rounded-xl border border-slate-200/50 shadow-inner">
                 {[
-                  { id: 'tecnologia', label: 'Tecnologia / Dev' },
+                  { id: 'tecnologia', label: 'Tecnologia' },
                   { id: 'servicos', label: 'Serviços' },
                   { id: 'comercio', label: 'Comércio' },
                 ].map((seg) => (
@@ -143,8 +151,8 @@ export default function Hero() {
                     onClick={() => setSegment(seg.id)}
                     className={`py-2 px-1 text-center rounded-lg text-xs font-bold transition-fluid ${
                       segment === seg.id
-                        ? 'bg-primary text-slate-950 shadow-md font-extrabold'
-                        : 'text-slate-400 hover:text-white hover:bg-white/[0.02]'
+                        ? 'bg-primary text-slate-950 shadow-sm font-extrabold'
+                        : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100/50'
                     }`}
                   >
                     {seg.label}
@@ -156,10 +164,10 @@ export default function Hero() {
             {/* Revenue Input Slider */}
             <div className="mb-8 text-left">
               <div className="flex justify-between items-end mb-3">
-                <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">
+                <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">
                   [02] FATURAMENTO MENSAL
                 </span>
-                <span className="text-xl font-bold text-white font-mono leading-none tracking-tight">
+                <span className="text-xl font-bold text-slate-900 font-mono leading-none tracking-tight">
                   {formatCurrency(revenue)}
                 </span>
               </div>
@@ -170,35 +178,35 @@ export default function Hero() {
                 step="5000"
                 value={revenue}
                 onChange={(e) => setRevenue(Number(e.target.value))}
-                className="w-full h-[3px] bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none"
+                className="w-full h-[3px] bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none"
               />
-              <div className="flex justify-between text-[9px] text-slate-500 mt-2 font-mono">
+              <div className="flex justify-between text-[9px] text-slate-400 mt-2 font-mono">
                 <span>R$ 10k</span>
                 <span>R$ 250k</span>
                 <span>R$ 500k+</span>
               </div>
             </div>
 
-            {/* Designer comparison display */}
-            <div className="bg-[#05080F]/45 border border-white/5 rounded-2xl p-6 mb-8 text-left">
-              <div className="grid grid-cols-2 gap-6 divide-x divide-white/5">
+            {/* Designer comparison display (Light Mode) */}
+            <div className="bg-slate-50/70 border border-slate-200/50 rounded-2xl p-6 mb-8 text-left">
+              <div className="grid grid-cols-2 gap-6 divide-x divide-slate-200/50">
                 <div className="flex flex-col">
-                  <span className="text-[9px] uppercase text-slate-500 tracking-wider font-mono">Custo Comum</span>
-                  <span className="text-lg font-bold text-red-400/90 font-mono mt-1 flex items-center gap-0.5">
+                  <span className="text-[9px] uppercase text-slate-400 tracking-wider font-mono">Custo Comum</span>
+                  <span className="text-lg font-bold text-red-500 font-mono mt-1 flex items-center gap-0.5">
                     {(normal * 100).toFixed(1)}% <Percent size={12} />
                   </span>
                 </div>
                 <div className="flex flex-col pl-6">
-                  <span className="text-[9px] uppercase text-slate-500 tracking-wider font-mono">Custo Visionária</span>
-                  <span className="text-lg font-bold text-green-400/90 font-mono mt-1 flex items-center gap-0.5">
+                  <span className="text-[9px] uppercase text-slate-400 tracking-wider font-mono">Custo Visionária</span>
+                  <span className="text-lg font-bold text-green-600 font-mono mt-1 flex items-center gap-0.5">
                     {(optimized * 100).toFixed(1)}% <Percent size={12} />
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-white/5 flex flex-col items-start justify-center">
-                <span className="text-[9px] text-slate-500 uppercase tracking-widest font-mono">Economia Estimada Anual</span>
-                <span className="text-3xl font-extrabold text-primary font-display mt-2 text-glow tracking-tight leading-none">
+              <div className="mt-6 pt-5 border-t border-slate-200/50 flex flex-col items-start justify-center">
+                <span className="text-[9px] text-slate-400 uppercase tracking-widest font-mono">Economia Estimada Anual</span>
+                <span className="text-3xl font-extrabold text-primary font-display mt-2 tracking-tight leading-none">
                   {formatCurrency(yearlySavings)}
                 </span>
               </div>
@@ -206,7 +214,7 @@ export default function Hero() {
 
             <a
               href="#contato"
-              className="w-full py-4 bg-white/[0.03] hover:bg-primary hover:text-slate-950 border border-white/5 hover:border-primary text-white font-extrabold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] hover:shadow-neon-primary"
+              className="w-full py-4 bg-slate-900 hover:bg-primary text-white hover:text-slate-950 font-extrabold rounded-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] shadow-md hover:shadow-neon-primary"
             >
               <DollarSign size={12} /> Garantir Essa Economia
             </a>

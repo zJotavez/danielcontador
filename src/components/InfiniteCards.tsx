@@ -50,19 +50,19 @@ const doubleTestimonials = [...testimonials, ...testimonials];
 
 export default function InfiniteCards() {
   return (
-    <section id="depoimentos" className="py-28 overflow-hidden relative border-t border-white/5 bg-[#05080F]">
+    <section id="depoimentos" className="py-28 overflow-hidden relative border-t border-slate-200/50 bg-[#FCFAF6]">
       {/* Background radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 mb-16 text-left">
         <div className="flex items-center gap-3 mb-4">
-          <span className="w-6 h-[1px] bg-primary"></span>
+          <span className="w-6 h-[1.5px] bg-primary"></span>
           <span className="text-[10px] uppercase tracking-[0.25em] font-extrabold text-primary font-mono">// CASOS DE ESTUDO</span>
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-4 tracking-tight">
-          Histórias de Crescimento <span className="font-serif italic font-normal text-primary text-glow">Real</span>
+        <h2 className="text-3xl md:text-5xl font-bold font-display text-slate-900 mb-4 tracking-tight">
+          Histórias de Crescimento <span className="font-serif italic font-normal text-primary text-glow font-light">Real</span>
         </h2>
-        <p className="text-slate-400 max-w-2xl font-light">
+        <p className="text-slate-600 max-w-2xl font-light">
           Parceiros que transformaram burocracia em margem de lucro com nosso planejamento.
         </p>
       </div>
@@ -74,10 +74,10 @@ export default function InfiniteCards() {
           {doubleTestimonials.map((t, idx) => (
             <div
               key={idx}
-              className="inline-block w-[350px] md:w-[420px] shrink-0 whitespace-normal glassmorphism p-8 rounded-3xl border border-white/5 hover:border-primary/30 transition-fluid hover:shadow-neon-primary bg-[#0A1120]/60 relative group"
+              className="inline-block w-[350px] md:w-[420px] shrink-0 whitespace-normal glassmorphism p-8 rounded-3xl border border-slate-200/50 hover:border-primary/45 transition-fluid hover:shadow-neon-primary bg-white relative group"
             >
               {/* Elegant Faint Aspas watermark in serif */}
-              <div className="absolute top-3 right-6 text-7xl font-serif text-white/[0.02] group-hover:text-primary/[0.04] transition-colors duration-500 pointer-events-none select-none">
+              <div className="absolute top-3 right-6 text-7xl font-serif text-slate-900/[0.03] group-hover:text-primary/[0.06] transition-colors duration-500 pointer-events-none select-none">
                 “
               </div>
 
@@ -89,21 +89,21 @@ export default function InfiniteCards() {
               </div>
 
               {/* Quote Text */}
-              <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-6 font-light italic relative z-10">
+              <p className="text-slate-600 text-xs md:text-sm leading-relaxed mb-6 font-light italic relative z-10">
                 "{t.text}"
               </p>
 
-              {/* Client Info (Asymmetrical Layout inside testimonial) */}
-              <div className="flex items-center gap-4 border-t border-white/5 pt-5 relative z-10">
+              {/* Client Info */}
+              <div className="flex items-center gap-4 border-t border-slate-100 pt-5 relative z-10">
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover border border-white/10 group-hover:border-primary/30 transition-colors duration-500 shadow-md"
+                  className="w-10 h-10 rounded-full object-cover border border-slate-200/60 group-hover:border-primary/30 transition-colors duration-500 shadow-md"
                 />
                 <div className="text-left">
-                  <h4 className="text-xs font-bold text-white font-display leading-tight">{t.name}</h4>
-                  <p className="text-[10px] text-slate-500 mt-0.5 font-mono uppercase tracking-wider">
-                    {t.role} — <span className="text-primary-light font-medium">{t.company}</span>
+                  <h4 className="text-xs font-bold text-slate-900 font-display leading-tight">{t.name}</h4>
+                  <p className="text-[10px] text-slate-400 mt-0.5 font-mono uppercase tracking-wider">
+                    {t.role} — <span className="text-primary font-medium">{t.company}</span>
                   </p>
                 </div>
               </div>
