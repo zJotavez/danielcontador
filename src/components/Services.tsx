@@ -77,8 +77,8 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Services Grid (multiple cards per row) */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Services Grid (2 columns on mobile, 4 columns on large screens) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
         {services.map((s, i) => {
           const IconComponent = s.icon;
           return (
@@ -86,7 +86,7 @@ export default function Services() {
               key={i}
               href="#contato"
               whileHover={{ y: -8 }}
-              className={`relative h-[400px] rounded-3xl overflow-hidden border border-slate-200 group transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-md bg-white flex flex-col justify-between p-8 ${s.hoverBorder}`}
+              className={`relative h-[340px] md:h-[400px] rounded-[22px] md:rounded-3xl overflow-hidden border border-slate-200 group transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-md bg-white flex flex-col justify-between p-4 md:p-8 ${s.hoverBorder}`}
             >
               {/* Card Photo Backdrop with color overlays */}
               <div className="absolute inset-0 z-0 pointer-events-none">
@@ -102,35 +102,35 @@ export default function Services() {
 
               {/* Card Header details */}
               <div className="relative z-10 flex justify-between items-center w-full">
-                <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest leading-none">
+                <span className="text-[8px] md:text-[9px] font-mono text-slate-400 uppercase tracking-widest leading-none">
                   // {s.category}
                 </span>
-                <span className="text-[9px] font-mono text-primary/80 font-extrabold leading-none">
+                <span className="text-[8px] md:text-[9px] font-mono text-primary/80 font-extrabold leading-none">
                   {s.num}
                 </span>
               </div>
 
               {/* Card Content */}
-              <div className="relative z-10 flex flex-col items-start w-full mt-auto mb-6">
+              <div className="relative z-10 flex flex-col items-start w-full mt-auto mb-3 md:mb-6">
                 {/* Icon box with color coding on hover */}
-                <div className={`w-11 h-11 flex items-center justify-center bg-slate-50 border border-slate-100 rounded-xl mb-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${s.iconHoverStyle}`}>
-                  <IconComponent className="text-primary group-hover:text-inherit transition-colors duration-300" size={20} />
+                <div className={`w-9 h-9 md:w-11 md:h-11 flex items-center justify-center bg-slate-50 border border-slate-100 rounded-xl mb-3 md:mb-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${s.iconHoverStyle}`}>
+                  <IconComponent className="w-4 h-4 md:w-5 md:h-5 text-primary group-hover:text-inherit transition-colors duration-300" />
                 </div>
 
-                <h3 className={`text-lg font-bold font-display text-slate-900 mb-3 transition-colors duration-300 ${s.titleHoverStyle}`}>
+                <h3 className={`text-sm md:text-lg font-bold font-display text-slate-900 mb-2 md:mb-3 transition-colors duration-300 ${s.titleHoverStyle}`}>
                   {s.title}
                 </h3>
                 
-                <p className="text-slate-500 text-xs leading-relaxed font-light group-hover:text-slate-600 transition-colors duration-300">
+                <p className="text-slate-500 text-[10px] md:text-xs leading-relaxed font-light group-hover:text-slate-600 transition-colors duration-300">
                   {s.desc}
                 </p>
               </div>
 
               {/* Bottom Action Area */}
-              <div className="relative z-10 w-full pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-400 transition-colors duration-300">
-                <span className="uppercase tracking-[0.2em] text-[9px] font-mono">Contratar</span>
-                <div className={`w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${s.arrowHoverStyle}`}>
-                  <ArrowUpRight size={12} className="group-hover:rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              <div className="relative z-10 w-full pt-3 md:pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-400 transition-colors duration-300">
+                <span className="uppercase tracking-[0.1em] text-[8px] md:tracking-[0.2em] md:text-[9px] font-mono">Contratar</span>
+                <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${s.arrowHoverStyle}`}>
+                  <ArrowUpRight className="w-3 h-3 md:w-[14px] md:h-[14px] group-hover:rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </div>
               </div>
             </motion.a>
